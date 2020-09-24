@@ -1,0 +1,22 @@
+{
+  "name": "tnnd",
+  "version": "1.0.0",
+  "description": "Js Core Functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mind0n/tnnd.git"
+  },
+  "keywords": [
+    "tnnd"
+  ],
+  "author": "mind0n",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mind0n/tnnd/issues"
+  },
+  "homepage": "https://github.com/mind0n/tnnd#readme"
+}
