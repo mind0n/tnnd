@@ -1,9 +1,10 @@
 {
   "name": "tnnd",
   "version": "1.0.0",
-  "description": "Js Core Functionality",
-  "main": "index.js",
+  "description": "Handy JS functions",
+  "main": "js/index.js",
   "scripts": {
+    "start": "echo \"Error: no start specified\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -11,12 +12,15 @@
     "url": "git+https://github.com/mind0n/tnnd.git"
   },
   "keywords": [
-    "tnnd"
+    "typescript",
+    "atom"
   ],
-  "author": "mind0n",
+  "author": "basaratali@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mind0n/tnnd/issues"
   },
-  "homepage": "https://github.com/mind0n/tnnd#readme"
+  "homepage": "https://github.com/mind0n/tnnd#readme",
+  "dependencies": {
+  }
 }
