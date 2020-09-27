@@ -1,3 +1,3 @@
-export * from "./deep/foo";
-export * from "./deep/deeper/bar";
-export declare var bas: string;
+export function log(...args: any[]): void;
+export function copy(target: any, ctx: any): any;
+export var tests: {};

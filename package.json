@@ -1,10 +1,10 @@
 {
   "name": "tnnd",
-  "version": "1.0.2",
+  "version": "1.0.9",
   "description": "Handy JS functions",
   "main": "dist/index.js",
   "scripts": {
-    "start": "echo \"Error: no start specified\" && exit 1",
+    "start": "erase dist /Q /F && tsc && erase /F /Q dist\\prototypes.js && erase /F /Q dist\\prototypes.js.map ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

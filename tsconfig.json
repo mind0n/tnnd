@@ -6,6 +6,7 @@
     ,"declaration": true
     ,"module": "commonjs"
     ,"outDir": "./dist"
+    ,"allowJs": true
   }
   ,"exclude": ["node_modules", "**/*.spec.ts", "dist"]
 }
