@@ -1,5 +1,6 @@
 export * from './prototypes';
 export * from './devices';
+export * from './events';
 export var tests = {};
 
 export function log(){
