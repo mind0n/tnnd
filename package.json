@@ -1,6 +1,6 @@
 {
   "name": "tnnd",
-  "version": "1.0.13",
+  "version": "1.0.17",
   "description": "Handy JS functions",
   "main": "dist/index.js",
   "scripts": {
@@ -21,6 +21,5 @@
     "url": "https://github.com/mind0n/tnnd/issues"
   },
   "homepage": "https://github.com/mind0n/tnnd#readme",
-  "dependencies": {
-  }
+  "dependencies": {}
 }

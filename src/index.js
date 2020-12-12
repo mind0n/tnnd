@@ -13,13 +13,12 @@ export function log(){
             txt += x + ';';
         });
     }
-    let body = document.body;
-    var logger = body.$log$;
+    let logger = window.$log$;
     if (!logger){
         logger = document.createElement('div');
-        body.$log$ = logger;
+        window.$log$ = logger;
         logger.id = 'log';
-        document.body.appendChild(logger);
+        //document.body.appendChild(logger);
     }
     //logger.innerHTML = txt + '<br/>' + logger.innerHTML;
     var l = document.createElement('div');
@@ -31,7 +30,14 @@ export function log(){
         logger.removeChild(logger.lastChild);
     }
 }
-
+document.addEventListener('DOMContentLoaded', function(){
+    if (!window.$log$){
+        let logger = document.createElement('div');
+        window.$log$ = logger;
+    }
+    document.body.appendChild(window.$log$);
+    console.log('Page log online');
+});
 Array.prototype.add = function (it) {
     this[this.length] = it;
 };
