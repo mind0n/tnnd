@@ -1,6 +1,6 @@
 {
   "name": "tnnd",
-  "version": "1.0.17",
+  "version": "1.0.26",
   "description": "Handy JS functions",
   "main": "dist/index.js",
   "scripts": {

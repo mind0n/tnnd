@@ -36,6 +36,9 @@ export function isIeMobile() {
 export function isAny() {
     return (isAndroid() || isBlackBerry() || isIos() || isOperaMini() || isIeMobile());
 }
+export function isTouchable(){
+    return navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+}
 
 let w = window;
 let d = document;

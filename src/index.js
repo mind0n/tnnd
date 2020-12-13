@@ -15,7 +15,7 @@ export function log(){
     }
     let logger = window.$log$;
     if (!logger){
-        logger = document.createElement('div');
+        logger = createLogger();
         window.$log$ = logger;
         logger.id = 'log';
         //document.body.appendChild(logger);
@@ -30,9 +30,20 @@ export function log(){
         logger.removeChild(logger.lastChild);
     }
 }
+function createLogger(){
+    var rlt = document.createElement('div');
+    rlt.style.position = 'fixed';
+    rlt.style.right = '10px';
+    rlt.style.top = '10px';
+    rlt.style.bottom = '10px';
+    rlt.style.width = '300px';
+    rlt.style.border = 'solid 1px silver';
+    rlt.style.overflow = 'auto';
+    return rlt;
+}
 document.addEventListener('DOMContentLoaded', function(){
     if (!window.$log$){
-        let logger = document.createElement('div');
+        let logger = createLogger();
         window.$log$ = logger;
     }
     document.body.appendChild(window.$log$);
@@ -96,7 +107,7 @@ Object.prototype.each = function(handler){
         var t = typeof(handler);
         if (t == 'function'){
             var target = this;
-            if (target instanceof Array){
+            if (target instanceof Array || target instanceof TouchList){
                 for (var i = 0; i<target.length; i++){
                     if (handler(target[i], i)){
                         return target[i];
