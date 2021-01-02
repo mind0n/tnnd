@@ -41,6 +41,44 @@ function createLogger(){
     rlt.style.overflow = 'auto';
     return rlt;
 }
+function format(n,len){
+    var s = n.toString();
+    var l = s.length;
+    for(var i=l; i<len; i++){
+        s = '0' + s;
+    }
+    return s;
+}
+export function uid(){
+    var d = new Date();
+    return 'axxxxxxx_YYYY_MMDD_HHmm_ssxxxxxxxxxx'.replace(/YYYY/g, function(){
+        return d.getFullYear();
+    })
+    .replace(/MM/g, function(){
+        var m = d.getMonth() + 1;
+        return format(m, 2);
+    })
+    .replace(/DD/, function(){
+        var dat = d.getDate();
+        return format(dat, 2);
+    })
+    .replace(/HH/g, function(){
+        var h = d.getHours();
+        return format(h, 2);
+    })
+    .replace(/mm/g, function(){
+        var m = d.getMinutes();
+        return format(m, 2);
+    })
+    .replace(/ss/g, function(){
+        var s = d.getSeconds();
+        return format(s, 2);
+    })
+    .replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
 document.addEventListener('DOMContentLoaded', function(){
     if (!window.$log$){
         let logger = createLogger();
@@ -107,7 +145,9 @@ Object.prototype.each = function(handler){
         var t = typeof(handler);
         if (t == 'function'){
             var target = this;
-            if (target instanceof Array || target instanceof TouchList){
+            if (target instanceof Array 
+                || target instanceof TouchList 
+                || target instanceof NodeList){
                 for (var i = 0; i<target.length; i++){
                     if (handler(target[i], i)){
                         return target[i];
@@ -182,4 +222,13 @@ export function copy(target, ctx) {
         ctx = null;
     }
     return r;
+}
+export function select(target, handler){
+    if (handler){
+        var t = typeof(target);
+        if (t == 'string'){
+            var rlt = document.querySelectorAll(target);
+            rlt.each(handler);
+        }
+    }
 }
